@@ -28,9 +28,14 @@
               "src/assets"
             ],
             "styles": [
+              "node_modules/bootstrap/dist/css/bootstrap.min.css",
               "src/styles.scss"
+
             ],
-            "scripts": []
+            "scripts": [
+
+
+            ]
           },
           "configurations": {
             "production": {
@@ -124,5 +129,8 @@
       }
     }
   },
-  "defaultProject": "vid-player"
+  "defaultProject": "vid-player",
+  "cli": {
+    "analytics": false
+  }
 }

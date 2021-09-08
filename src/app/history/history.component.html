@@ -1,0 +1,5 @@
+<ul class="list-group">
+  <li class="list-group-item" *ngFor="let item of historyList; ;let i = index;"
+  [ngClass]="{'active': (selectedIndex === item) }"  (click)="playVideo(i);listClick($event, item)">{{item}}</li>
+
+</ul>

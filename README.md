@@ -1,3 +1,9 @@
+
+<!-- https://github.com/pranay77738/angular_frontend -->
+
+<!-- for adding history, list of all history and same for bookmarks -->
+
+<!-- ng build --prod -->
 # VidPlayer
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 11.0.3.
