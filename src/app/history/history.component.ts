@@ -26,7 +26,7 @@ export class HistoryComponent implements OnInit {
 
   updateHistoyList(data) {
     const index = this.historyList.findIndex(comment => comment.fields.history_url === data);
-    console.log(index, 'index');
+
     if (index === -1) {
       this.historyList.push({ 'fields': { history_url: data } });
       this.updateData(data);
@@ -51,7 +51,7 @@ export class HistoryComponent implements OnInit {
 
 
     let formData: FormData = new FormData();
-    formData.append('Bookmark', this.historyList[i]);
+    formData.append('Bookmark', this.historyList[i].fields.history_url);
 
     this.api.postService('bookmark/add/', formData).subscribe((data) => {
       console.log('Bookmark added');
