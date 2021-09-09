@@ -54,7 +54,8 @@ export class HistoryComponent implements OnInit {
     formData.append('bookmark_url', this.historyList[i].fields.history_url);
 
     this.api.postService('bookmark/add/', formData).subscribe((data) => {
-      console.log('Bookmark added');
+
+      alert('Bookmark added');
 
     });
   }
