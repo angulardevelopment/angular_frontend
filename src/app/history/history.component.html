@@ -1,5 +1,13 @@
 <ul class="list-group">
-  <li class="list-group-item" *ngFor="let item of historyList; ;let i = index;"
-  [ngClass]="{'active': (selectedIndex === item) }"  (click)="playVideo(i);listClick($event, item)">{{item}}</li>
-
+  <li
+    class="list-group-item"
+    *ngFor="let item of historyList; let i = index"
+    [ngClass]="{ active: selectedIndex === item.fields.history_url }"
+    (click)="playVideo(i); listClick($event, item.fields.history_url)"
+  >
+    {{ item.fields.history_url }}
+    <span (click)="updateBookmark(i)">
+      <img src="assets/bookmarks.svg" alt="">
+    </span>
+  </li>
 </ul>

@@ -1,5 +1,5 @@
 
-<!-- https://github.com/pranay77738/angular_frontend -->
+
 
 <!-- for adding history, list of all history and same for bookmarks -->
 

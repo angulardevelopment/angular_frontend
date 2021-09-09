@@ -7,13 +7,13 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./searchbar.component.scss']
 })
 export class SearchbarComponent implements OnInit {
-updatedURL = '';
+  updatedURL = '';
   constructor(public data: DataService) { }
 
   ngOnInit(): void {
   }
 
-  playVideo(){
-this.data.youtubeURL.next(this.updatedURL);
+  playVideo() {
+    this.data.youtubeURL.next(this.updatedURL);
   }
 }

@@ -1,4 +1,10 @@
 <!-- <iframe [src]="url | safe"></iframe> -->
 
-<!-- *ngIf="url!=''" -->
-<iframe width="560" height="315" [src]="url" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen ></iframe>
+<iframe *ngIf="url!=''"
+  width="560"
+  height="315"
+  [src]="url"
+  frameborder="0"
+  allow="autoplay; encrypted-media"
+  allowfullscreen
+></iframe>
