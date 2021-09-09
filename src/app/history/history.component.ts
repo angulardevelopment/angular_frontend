@@ -38,7 +38,7 @@ export class HistoryComponent implements OnInit {
 
 
     let formData: FormData = new FormData();
-    formData.append('History', url);
+    formData.append('history_url', url);
 
     this.api.postService('', formData).subscribe((data) => {
       console.log('history updated');
@@ -51,7 +51,7 @@ export class HistoryComponent implements OnInit {
 
 
     let formData: FormData = new FormData();
-    formData.append('Bookmark', this.historyList[i].fields.history_url);
+    formData.append('bookmark_url', this.historyList[i].fields.history_url);
 
     this.api.postService('bookmark/add/', formData).subscribe((data) => {
       console.log('Bookmark added');
