@@ -1,0 +1,35 @@
+.videoWrapper {
+  height:500px;
+  width:600px;
+  position:relative;
+  overflow:hidden;
+  border: 3px solid green;
+}
+
+.videoWrapper iframe {
+    height:100%;
+    width:100%;
+    position:absolute;
+    top:0;
+    bottom:0;
+}
+
+.vidicon {
+
+
+  display: flex;
+
+
+  justify-content: center;
+
+
+  }
+
+
+  .videoIcon {
+
+
+    width: 200px;
+
+
+    }
