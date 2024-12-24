@@ -5,3 +5,6 @@
 
 <!-- ng build --prod -->
 # VidPlayer
+
+    "bootstrap": "^4.6.0",
+    "jquery": "^3.6.0",

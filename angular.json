@@ -70,18 +70,18 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "vid-player:build"
+            "buildTarget": "vid-player:build"
           },
           "configurations": {
             "production": {
-              "browserTarget": "vid-player:build:production"
+              "buildTarget": "vid-player:build:production"
             }
           }
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "vid-player:build"
+            "buildTarget": "vid-player:build"
           }
         },
         "test": {

@@ -7,7 +7,8 @@ import { Subscription } from 'rxjs';
 @Component({
   selector: 'app-videoview',
   templateUrl: './videoview.component.html',
-  styleUrls: ['./videoview.component.scss']
+  styleUrls: ['./videoview.component.scss'],
+  standalone: false
 })
 export class VideoviewComponent implements OnInit {
 

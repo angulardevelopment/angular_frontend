@@ -8,7 +8,8 @@ import { HttpClient } from '@angular/common/http';
 @Component({
   selector: 'app-history',
   templateUrl: './history.component.html',
-  styleUrls: ['./history.component.scss']
+  styleUrls: ['./history.component.scss'],
+  standalone: false
 })
 export class HistoryComponent implements OnInit {
   private subscriptions: Subscription[] = [];
