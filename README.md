@@ -21,11 +21,11 @@ I'm Sam, and I'm passionate about product engineering and web development. I cre
 
 
 ### About the VidPlayer app
-<!-- for adding history, list of all history and same for bookmarks -->
+for adding history, list of all history and same for bookmarks 
 <!-- ng build --prod -->
     "bootstrap": "^4.6.0",
     "jquery": "^3.6.0",
-
+https://github.com/pythonprogramming-development/django_APIS_backend
 ### useful commands to run project
 
 -
