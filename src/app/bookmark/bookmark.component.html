@@ -5,6 +5,25 @@
     [ngClass]="{ active: selectedIndex === item.fields.bookmark_url }"
     (click)="playVideo(i); listClick($event, item.fields.bookmark_url)"
   >
-    {{ item.fields.bookmark_url }}
+     {{i+1}}. {{ item.fields.bookmark_url }}
+      <button class="btn btn-sm btn-outline-primary" (click)="openShareModal(item)">Share</button>
+
   </li>
 </ul>
+
+<!-- Share Link Modal -->
+<div class="modal fade" id="shareModal" tabindex="-1" aria-labelledby="shareModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="shareModalLabel">Share Bookmark</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <input type="text" class="form-control" [value]="selectedBookmark?.fields.bookmark_url" readonly #linkInput>
+        <button class="btn btn-outline-success mt-2" (click)="copyLink()">Copy Link</button>
+      </div>
+    </div>
+  </div>
+</div>
+

@@ -1,6 +1,9 @@
+import { Subscription } from 'rxjs';
+import { Bookmark } from '../models/bookmark';
 import { ApiService } from './../services/api.service';
 import { DataService } from './../services/data.service';
-import { Component, OnInit } from '@angular/core';
+import { Component, ElementRef, OnInit, ViewChild, viewChild } from '@angular/core';
+declare var bootstrap: any; // For Bootstrap 5
 
 @Component({
   selector: 'app-bookmark',
@@ -11,10 +14,17 @@ import { Component, OnInit } from '@angular/core';
 export class BookmarkComponent implements OnInit {
   bookmarkList = [];
   selectedIndex;
+  selectedBookmark: Bookmark | null = null;
+  private subscriptions: Subscription[] = [];
 
   constructor(public data: DataService, public api: ApiService) { }
 
   ngOnInit(): void {
+      this.subscriptions.push(this.data.bookMarkUpdate.subscribe((data) => {
+      if (data) {
+         this.getBookmarkList();
+      }
+    }));
     this.getBookmarkList();
   }
 
@@ -37,5 +47,20 @@ export class BookmarkComponent implements OnInit {
     });
   }
 
+
+@ViewChild('linkInput') linkInput!: ElementRef<HTMLInputElement>;
+
+  openShareModal(bookmark) {
+        this.selectedBookmark = bookmark;
+    const shareModal = new bootstrap.Modal(document.getElementById('shareModal'));
+    shareModal.show();
+  }
+
+  copyLink() {
+     const inputElement = this.linkInput.nativeElement;
+  inputElement.select();
+    document.execCommand('copy');
+    alert('Link copied to clipboard!');
+  }
 
 }

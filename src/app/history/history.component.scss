@@ -1,0 +1,19 @@
+.custom-bookmark {
+  display: inline-block;
+  width: 16px;
+  height: 20px;
+  background-color: #555; /* default color */
+  clip-path: polygon(
+    0% 0%, 100% 0%, 100% 85%, 50% 100%, 0% 85%
+  );
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.custom-bookmark:hover {
+  background-color: #007bff; /* hover color */
+}
+
+.custom-bookmark.active {
+  background-color: #ffc107; /* bookmarked state */
+}

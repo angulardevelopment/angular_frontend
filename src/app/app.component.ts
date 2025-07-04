@@ -18,6 +18,7 @@ export class AppComponent {
   }
   getBookmarkList() {
     this.api.getService('bookmark/list/').subscribe((data) => {
+      console.log(data);
       this.bookmarkListLength = data.length;
 
     });

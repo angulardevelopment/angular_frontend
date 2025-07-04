@@ -1,7 +1,9 @@
 import { environment } from './../../environments/environment.prod';
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { of } from 'rxjs';
 import { map } from 'rxjs/operators';
+import { historyList } from '../mock-data/history-list';
 
 @Injectable({
   providedIn: 'root'
@@ -23,6 +25,11 @@ export class ApiService {
       return res;
     })
     );
+    // if(url === 'history/list/') {
+    // return of(historyList);
+    // } else if(url === 'bookmark/list/') {
+    //   return of(historyList);
+    // }
   }
 
   postService(url: string, data: any) {
@@ -33,5 +40,6 @@ export class ApiService {
         return res;
       })
     );
+  //  return of({ success: true });
   }
 }

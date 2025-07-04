@@ -6,6 +6,7 @@ import { BehaviorSubject } from 'rxjs';
 })
 export class DataService {
   youtubeURL = new BehaviorSubject<string>('');
+  bookMarkUpdate = new BehaviorSubject<string>('');
 
   constructor() { }
 }

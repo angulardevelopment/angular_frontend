@@ -5,8 +5,9 @@
     [ngClass]="{ active: selectedIndex === item.fields.history_url }"
     (click)="playVideo(i); listClick($event, item.fields.history_url)"
   >
-    {{ item.fields.history_url }}
-    <span (click)="updateBookmark(i)">
+   {{i+1}}. {{ item.fields.history_url }}
+    <span (click)="updateBookmark(i)"   class="custom-bookmark" 
+  [class.active]="isBookmarked(i)">
       <img src="assets/bookmarks.svg" alt="">
     </span>
   </li>

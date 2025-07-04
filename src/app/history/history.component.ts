@@ -1,7 +1,6 @@
-import { environment } from './../../environments/environment.prod';
 import { ApiService } from './../services/api.service';
 import { DataService } from './../services/data.service';
-import { Component, OnInit } from '@angular/core';
+import { ChangeDetectorRef, Component, OnInit } from '@angular/core';
 import { Subscription } from 'rxjs';
 import { HttpClient } from '@angular/common/http';
 
@@ -15,7 +14,9 @@ export class HistoryComponent implements OnInit {
   private subscriptions: Subscription[] = [];
   historyList = [];
   selectedIndex;
-  constructor(public data: DataService, public api: ApiService) {
+  bookmarkedIndices = new Set<number>();
+
+  constructor(public data: DataService, public api: ApiService, public changeDetector: ChangeDetectorRef) {
     this.subscriptions.push(this.data.youtubeURL.subscribe((data) => {
 
       if (data) {
@@ -48,18 +49,28 @@ export class HistoryComponent implements OnInit {
     });
   }
 
-  updateBookmark(i) {
+  updateBookmark(i: number) {
 
 
     let formData: FormData = new FormData();
     formData.append('bookmark_url', this.historyList[i].fields.history_url);
 
     this.api.postService('bookmark/add/', formData).subscribe((data) => {
-
-      alert('Bookmark added');
+    this.data.bookMarkUpdate.next('Bookmark added');
+      this.changeDetector.detectChanges();
+      console.log('Bookmark added');
 
     });
+  //     if (this.bookmarkedIndices.has(i)) {
+  //   this.bookmarkedIndices.delete(i);
+  // } else {
+  //   this.bookmarkedIndices.add(i);
+  // }
   }
+
+isBookmarked(i: number): boolean {
+  return this.bookmarkedIndices.has(i);
+}
 
   playVideo(i) {
     this.data.youtubeURL.next(this.historyList[i].fields.history_url);
